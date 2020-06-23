@@ -28,6 +28,7 @@ and produtos.id_modelo = modelos.id_modelo
 and clientes.nome = 'Allan'
 
 
+
 *************//Adicionado o Vendedor que vendeu para o Allan\\*************
 
 select
@@ -43,6 +44,9 @@ and produtos_vendas.id_produto = produtos.id_produto
 and produtos.id_marca = marcas.id_marca
 and produtos.id_modelo = modelos.id_modelo
 and clientes.nome = 'Allan'
+
+
+
 
 *************//Telefone do Davi\\*************
 
