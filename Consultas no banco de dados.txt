@@ -1,0 +1,72 @@
+*************//Clientes que residem em Vitória\\*************
+
+select
+clientes.nome, enderecos_cliente.complemento, enderecos_cliente.numero, logradouros.nome, bairros.nome, cidades.nome
+from
+Clientes, Enderecos_Cliente, Logradouros, Bairros, Cidades
+where clientes.id_endereco = enderecos_cliente.id_endereco
+and enderecos_cliente.id_logradouro = logradouros.id_logradouro
+and logradouros.id_bairro = bairros.id_bairro
+and bairros.id_cidade = cidades.id_cidade
+and cidades.nome ='Vitoria'
+
+
+
+*************//Compras do Allan\\*************
+
+select
+clientes.nome, vendas.forma_pagamento, vendas.data, produtos_vendas.quantidade, produtos_vendas.total,produtos_vendas.preco,
+produtos.descricao, produtos.tamanho, marcas.descricao, modelos.descricao
+from
+Clientes, Vendas, Produtos_Vendas, Produtos, Modelos, Marcas
+where 
+clientes.id_cliente = vendas.id_cliente
+and vendas.id_venda = produtos_vendas.id_venda
+and produtos_vendas.id_produto = produtos.id_produto
+and produtos.id_marca = marcas.id_marca
+and produtos.id_modelo = modelos.id_modelo
+and clientes.nome = 'Allan'
+
+
+*************//Adicionado o Vendedor que vendeu para o Allan\\*************
+
+select
+clientes.nome,funcionarios.nome,funcionarios.vendedor, vendas.forma_pagamento, vendas.data, produtos_vendas.quantidade, produtos_vendas.total,produtos_vendas.preco,
+produtos.descricao, produtos.tamanho, marcas.descricao, modelos.descricao
+from
+Clientes, Vendas, Produtos_Vendas, Produtos, Modelos, Marcas, Funcionarios
+where 
+clientes.id_cliente = vendas.id_cliente
+and vendas.id_funcionario = funcionarios.id_funcionario
+and vendas.id_venda = produtos_vendas.id_venda
+and produtos_vendas.id_produto = produtos.id_produto
+and produtos.id_marca = marcas.id_marca
+and produtos.id_modelo = modelos.id_modelo
+and clientes.nome = 'Allan'
+
+
+*************//Telefone do Davi\\*************
+
+select clientes.nome, telefones_cliente.fixo, telefones_cliente.tipo, telefones_cliente.principal, telefones_cliente.ativo, telefones_cliente.ddi, telefones_cliente.ddd, telefones_cliente.numero
+from
+Clientes, Telefones_Cliente
+where
+telefones_cliente.id_cliente = clientes.id_cliente
+and
+clientes.nome = 'Davi'
+
+
+
+*************//Avaliação do cliente\\*************
+select lojas.nome, atendimentos.protocolo_atendimento, atendimentos.avaliacao, atendimentos.descricao, atendimentos.data
+
+from
+Lojas, Funcionarios, Atendimentos
+
+where
+atendimentos.id_funcionario = funcionarios.id_funcionario
+and funcionarios.id_loja = lojas.id_loja
+and lojas.nome = 'CalcadosBD Praia da Costa'
+
+
+
