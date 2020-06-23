@@ -1,7 +1,7 @@
 ## Integrantes
 
  - Allan Faé
- - Davi Correa Bezerra
+ - Davi Corrêa Bezerra
  - Eduardo Angelo Simon
  - Rafael Antunes Costa
 
