@@ -31,8 +31,8 @@ and clientes.nome = 'Allan'
 *************//Adicionado o Vendedor que vendeu para o Allan\\*************
 
 select
-clientes.nome,funcionarios.nome,funcionarios.vendedor, vendas.forma_pagamento, vendas.data, produtos_vendas.quantidade, produtos_vendas.total,produtos_vendas.preco,
-produtos.descricao, produtos.tamanho, marcas.descricao, modelos.descricao
+clientes.nome,funcionarios.nome as NOME_DO_VENDEDOR, vendas.forma_pagamento, vendas.data, produtos_vendas.quantidade, produtos_vendas.total,produtos_vendas.preco,
+produtos.descricao, produtos.tamanho, marcas.descricao as MARCA, modelos.descricao as MODELO
 from
 Clientes, Vendas, Produtos_Vendas, Produtos, Modelos, Marcas, Funcionarios
 where 
@@ -43,7 +43,6 @@ and produtos_vendas.id_produto = produtos.id_produto
 and produtos.id_marca = marcas.id_marca
 and produtos.id_modelo = modelos.id_modelo
 and clientes.nome = 'Allan'
-
 
 *************//Telefone do Davi\\*************
 
